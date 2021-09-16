@@ -5,12 +5,25 @@ document.getElementById("submit").onclick = e => {
   var x = document.getElementById("textTheyTyped").value;
   var n = / |[a-zA-Z]|[\r\n][0-9]/g;
   var almostFinal = x.replace(n,"");
-  var k = /[\r\n]/g;
+  var k = /[\r\n]|[0-9]/g;
   var final = almostFinal.replace(k,"");
   document.getElementById("textTheyTyped").value = final;
+  
+};
+
+
+
+
+
+/*
   var listOfChars = [];
   for (var a = 0; a < final.length - 1; a++) {
     listOfChars.push(final.charCodeAt(a));
   };
-  console.log(listOfChars);
-};
+  var recon = "";
+  for (var b = 0; b < listOfChars.length - 1; b++) {
+    recon += String.fromCharCode(listOfChars[b]);
+  }
+  document.getElementById("textTheyTyped").value = recon;
+  // console.log(listOfChars);
+  */
