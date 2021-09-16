@@ -8,5 +8,9 @@ document.getElementById("submit").onclick = e => {
   var k = /[\r\n]/g;
   var final = almostFinal.replace(k,"");
   document.getElementById("textTheyTyped").value = final;
-  console.log(final);
+  var listOfChars = [];
+  for (var a = 0; a < final.length - 1; a++) {
+    listOfChars.push(final.charCodeAt(a));
+  };
+  console.log(listOfChars);
 };
