@@ -1,7 +1,7 @@
 document.getElementById("textTheyTyped").value = "Paste in some text here!";
 
 document.getElementById("submit").onclick = e => {
-  console.log("I got clicked");
+  e.preventDefault();
   var x = document.getElementById("textTheyTyped").value;
   var n = / |[a-zA-Z]|[\r\n][0-9]/g;
   var almostFinal = x.replace(n,"");
