@@ -1,3 +1,4 @@
+
 document.getElementById("textTheyTyped").value = "Paste in some text here!";
 
 
@@ -22,6 +23,17 @@ document.getElementById("submit").onclick = e => {
   document.getElementById("textTheyTyped").value = "Working on it!";
   
 };
+
+function uniToHTML (y) {
+  let x = "";
+  switch (y) {
+    case 8220: 
+      x = "&#8220";
+      break;
+      
+  }
+}
+
 
 /* 
 - 8220 -- use it to generate the HTML for curly left quotes 
