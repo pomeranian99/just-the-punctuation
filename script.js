@@ -24,7 +24,7 @@ document.getElementById("submit").onclick = e => {
 };
 
 /* 
-- 8220 -- is  
+- 8220 -- use it to generate the HTML for curly left quotes 
 
 
 
