@@ -23,8 +23,12 @@ document.getElementById("submit").onclick = e => {
   
 };
 
-
 /* 
+- 8220 -- is  
+
+
+
+
 document.getElementById("submit").onclick = e => {
   e.preventDefault();
   var x = document.getElementById("textTheyTyped").value;
