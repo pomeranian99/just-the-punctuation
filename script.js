@@ -30,6 +30,28 @@ function uniToHTML (y) {
     case 8220: 
       x = "&#8220";
       break;
+    case 8217:
+      x = "&#8217;"
+      break;
+    case 45:
+      x = "&#8208;"
+      break;
+    case 44:
+      x = "&#44;";
+      break;
+    case 46:
+      x = "&#46;";
+      break;
+    case 47:
+      x = "&#8212;";
+      break;
+    case 36:
+      x = "&#36;";
+      break;
+    case 59:
+      x = "&#59;";
+      break;
+      
       
   }
 }
