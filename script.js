@@ -59,7 +59,7 @@ document.getElementById("submit").onclick = e => {
     // specced out in my array
     for (let c = 0; c < uniToAscii.length; c++) {
       if (charArray[b] === uniToAscii[c][0]) {
-        finalArray.push(uniToAscii[c][1]);
+        finalArray.push(uniToAscii[c][1]);  
       }
     }
   }
@@ -68,8 +68,8 @@ document.getElementById("submit").onclick = e => {
   // change the text in the box
   var resultHTML = "";
   for (let i = 0; i < finalArray.length; i++) {
-    resultHTML+= "&#" + finalArray[i] + ";";
+    resultHTML+= "&#" + finalArray[i] + ";" + "&nbsp;";
   }
-  document.getElementById('container').innerHTML = "<div id= "  + resultHTML;
+  document.getElementById('container').innerHTML = "<div id='final'>"  + resultHTML + "</div>";
   // document.getElementById("textTheyTyped").value = "Working on it!";
 };

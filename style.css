@@ -11,3 +11,10 @@ h1 {
 #final {
   font-family: 'Special Elite', cursive;  
 }
+
+#container {
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
