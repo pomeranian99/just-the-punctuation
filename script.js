@@ -70,6 +70,6 @@ document.getElementById("submit").onclick = e => {
   for (let i = 0; i < finalArray.length; i++) {
     resultHTML+= "&#" + finalArray[i] + ";";
   }
-  document.getElementById('container').innerHTML = resultHTML;
+  document.getElementById('container').innerHTML = "<div id= "  + resultHTML;
   // document.getElementById("textTheyTyped").value = "Working on it!";
 };

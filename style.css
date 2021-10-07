@@ -1,8 +1,13 @@
 /* 
 font-family: 'Goudy Bookletter 1911', serif;
 font-family: 'Roboto', sans-serif;
+font-family: 'Special Elite', cursive;
 */ 
 
 h1 {
   font-family: 'Roboto', sans-serif;
+}
+
+#final {
+  font-family: 'Special Elite', cursive;  
 }
