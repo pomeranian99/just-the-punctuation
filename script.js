@@ -13,15 +13,15 @@ document.getElementById("submit").onclick = e => {
   // the "final" string winds up having some mystery line-breaks thrown in. Can't figure out how to get 'em out! So, here's my super-hacky way to get rid of them: i) push the charcode of each character in "final" into an array, ii) iterate through that array and add each charcode to a new string
   var charArray = [];
   for (let c = 0; c < final.length; c++) {
-    // CODE TO ADD HERE!!
-    // 1) if the character code is less than 128 (and is thus part of the ASCII character set) ...
-    // 2) push
     charArray.push(final.charCodeAt(c));
   }
   // NOW, what I need to do is ...
   // 1) iterate through the array, and ...
-  // 2) if the number is below 128 (and thus part of the ASCII character set) ...
-  // 3) turn it into the relevant ascii 
+  // 2) if the number is less than 128 ...
+  // 3) push into the array the html for that number (i.e. "&#34;"). But ..
+  // 4) ... if it's larger than 127 (and thus is UNICODE) ... 
+  // 5) .. translate it to
+  // 3) push into a new array
   console.log("The array I got is ... ")
   console.log(charArray);
   var result = "";
@@ -34,14 +34,17 @@ document.getElementById("submit").onclick = e => {
 function uniToHTML (y) {
   let x = "";
   switch (y) {
-    case 8220: 
-      x = "&#8220";
+    case 8220: // double quotes
+      x = "&#34;";
       break;
-    case 8221:
-      x = "&#8221;";
+    case 8221: // double quotes 
+      x = "&#34;";
       break;
-    case 8217:
-      x = "&#8217;"
+    case 8217: // single quotes
+      x = "&#39;"
+      break;
+    case 37: // percent 
+      x = "&#37;";
       break;
     case 45:
       x = "&#8208;"
