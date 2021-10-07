@@ -50,14 +50,14 @@ document.getElementById("submit").onclick = e => {
   console.log(charArray);
 
   var finalArray = [];
-  for (var b = 0; b < charArray.length; b++) {
+  for (let b = 0; b < charArray.length; b++) {
     // if it's ASCII, just push the value into finalArray
     if (charArray[b] < 128) {
       finalArray.push(charArray[b]);
     }
     // otherwise, check and see if it's one of the special characters I
     // specced out in my array
-    for (var c = 0; c < uniToAscii.length; c++) {
+    for (let c = 0; c < uniToAscii.length; c++) {
       if (charArray[b] === uniToAscii[c][0]) {
         finalArray.push(uniToAscii[c][1]);
       }
