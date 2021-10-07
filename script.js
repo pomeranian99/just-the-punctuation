@@ -24,7 +24,8 @@ var uniToAscii = [
   [8250, 155], // single right-pointing angle quotation
   [8259, 45], // hyphen
   [8260, 47], // forward slash
-  [8267, 182][(8270, 42)], // pilcrow, paragraph sign // asterisk
+  [8267, 182], // pilcrow, paragraph sign
+  [8270, 42], // asterisk
   [8274, 37], // percent sign
   [8275, 126], // wavy sign
   [8277, 42], // asterisk
@@ -40,31 +41,23 @@ document.getElementById("submit").onclick = e => {
   // for some reason I seem to need to run this substitution again, I have no idea why lol
   var k = /[\r\n]|[0-9]/g;
   var final = almostFinal.replace(k, "");
-  // the "final" string winds up having some mystery line-breaks thrown in. Can't figure out how to get 'em out! So, here's my super-hacky way to get rid of them: i) push the charcode of each character in "final" into an array, ii) iterate through that array and add each charcode to a new string
+  // the "final" string winds up having some mystery line-breaks thrown in. Can't figure out how to get 'em out! So, here's my super-hacky way to get rid of them: go character by character ...
   var charArray = [];
   for (let c = 0; c < final.length; c++) {
     charArray.push(final.charCodeAt(c));
   }
   console.log("The array I got is ... ");
   console.log(charArray);
-  var result = "";
 
-  // NOW, what I need to do is ...
-  // 1) iterate through the array, and ...
-  // 2) if the number is less than 128 ...
-  // 3) push into the array the html for that number (i.e. "&#34;"). But ..
-  // 4) ... if it's larger than 127 (and thus is UNICODE) ...
-  // 5) .. translate it to ASCII
-  // 3) push into a new array
   var finalArray = [];
-  for (let b = 0; b < charArray.length; b++) {
+  for (var b = 0; b < charArray.length; b++) {
     // if it's ASCII, just push the value into finalArray
     if (charArray[b] < 128) {
       finalArray.push(charArray[b]);
     }
-    // otherwise, check and see if it's one of the special characters I 
+    // otherwise, check and see if it's one of the special characters I
     // specced out in my array
-    for (let c = 0; c < uniToAscii.length; c++) {
+    for (var c = 0; c < uniToAscii.length; c++) {
       if (charArray[b] === uniToAscii[c][0]) {
         finalArray.push(uniToAscii[c][1]);
       }
@@ -75,40 +68,3 @@ document.getElementById("submit").onclick = e => {
   // change the text in the box
   document.getElementById("textTheyTyped").value = "Working on it!";
 };
-
-/*
-function uniToHTML (y) {
-  let x = "";
-  switch (y) {
-    case 8220: // double quotes
-      x = "&#34;";
-      break;
-    case 8221: // double quotes 
-      x = "&#34;";
-      break;
-    case 8217: // single quotes
-      x = "&#39;"
-      break;
-      
-  }
-}
-
-
-/* 
-- 8220 -- use it to generate the HTML for curly left quotes 
-
-
-
-
-document.getElementById("submit").onclick = e => {
-  e.preventDefault();
-  var x = document.getElementById("textTheyTyped").value;
-  var n = / |[a-zA-Z]|[\r\n][0-9]/g;
-  var almostFinal = x.replace(n,"");
-  var k = /[\r\n]|[0-9]/g;
-  var final = almostFinal.replace(k,"");
-  document.getElementById("textTheyTyped").value = final;
-  
-};
-
-*/
