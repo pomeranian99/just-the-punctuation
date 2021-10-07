@@ -6,6 +6,11 @@ font-family: 'Special Elite', cursive;
 
 h1 {
   font-family: 'Roboto', sans-serif;
+  font-size: 3em;
+}
+
+body {
+  /* background: #b2def7; */
 }
 
 #final {
@@ -13,8 +18,10 @@ h1 {
 }
 
 #container {
-  margin-top: 10vh;
+  margin: auto;
+  width: 50%;
+  /* margin-top: 10vh;
   margin-bottom: 10vh;
   margin-left: 10vw;
-  margin-right: 10vw;
+  margin-right: 10vw; */
 }
