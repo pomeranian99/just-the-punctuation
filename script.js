@@ -67,7 +67,9 @@ document.getElementById("submit").onclick = e => {
     }
     if (charArray[b] > 127) {
       for (let k = 0; k < uniToAscii.length; k++) {
-        
+        for (let l = 0; l < uniToAscii.length; l++) {
+          
+        }
       }
     }
   }
