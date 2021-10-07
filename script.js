@@ -66,5 +66,10 @@ document.getElementById("submit").onclick = e => {
   console.log("The array I'm left with is ... ");
   console.log(finalArray);
   // change the text in the box
-  document.getElementById("textTheyTyped").value = "Working on it!";
+  var resultHTML = "";
+  for (let i = 0; i < finalArray.length; i++) {
+    
+  }
+  document.getElementById('container').innerHTML = 'Hi there!';
+  // document.getElementById("textTheyTyped").value = "Working on it!";
 };
