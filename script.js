@@ -2,6 +2,17 @@
 document.getElementById("textTheyTyped").value = "Paste in some text here!";
 
 
+
+var uniToAscii = [
+  [8201, 45], // hyphen
+  [8209, 45], // hyphen
+  [8210, 150],// n-dash
+  [8211, 150],  // n-dash
+  [8212, 151], // m-dash
+  [8212, 151], // m-dash
+  [8126, 39], 
+]
+
 document.getElementById("submit").onclick = e => {
   e.preventDefault();
   var x = document.getElementById("textTheyTyped").value;
@@ -31,15 +42,14 @@ document.getElementById("submit").onclick = e => {
     if (charArray[b] < 128) {
       finalArray.push(charArray[b]);
     }
-    if (charArray[b] > 127) {
-      finalArray.push(uniToHTML(charArray[b]));
-    }
   }
   // change the text in the box 
   document.getElementById("textTheyTyped").value = "Working on it!";
   
 };
 
+
+/*
 function uniToHTML (y) {
   let x = "";
   switch (y) {
