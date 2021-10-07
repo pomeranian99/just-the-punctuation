@@ -68,7 +68,7 @@ document.getElementById("submit").onclick = e => {
   // change the text in the box
   var resultHTML = "";
   for (let i = 0; i < finalArray.length; i++) {
-    resultHTML+= "&#" + finalArray[i] + ";" + "&nbsp;";
+    resultHTML+= "&#" + finalArray[i] + ";" + " ";
   }
   document.getElementById('container').innerHTML = "<div id='final'>"  + resultHTML + "</div>";
   // document.getElementById("textTheyTyped").value = "Working on it!";
