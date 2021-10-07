@@ -29,8 +29,11 @@ var uniToAscii = [
   [8260, 47], // forward slash
   [8267, 182] // pilcrow, paragraph sign
   [8270, 42], // asterisk
-  
-  
+  [8274, 37], // percent sign
+  [8275, 126], // wavy sign
+  [8277, 42], // asterisk
+  [8353, 128], // euro
+  [8364, 128] // euro
 ]
 
 document.getElementById("submit").onclick = e => {
@@ -61,6 +64,11 @@ document.getElementById("submit").onclick = e => {
   for (let b = 0; b < charArray.length; b++) {
     if (charArray[b] < 128) {
       finalArray.push(charArray[b]);
+    }
+    if (charArray[b] > 127) {
+      for (let k = 0; k < uniToAscii.length; k++) {
+        
+      }
     }
   }
   // change the text in the box 
