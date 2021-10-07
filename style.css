@@ -11,17 +11,12 @@ h1 {
 
 body {
   /* background: #b2def7; */
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  margin-left: 5vw;
+  margin-right: 5vw;
 }
 
 #final {
   font-family: 'Special Elite', cursive;  
-}
-
-#container {
-  margin: auto;
-  width: 50%;
-  /* margin-top: 10vh;
-  margin-bottom: 10vh;
-  margin-left: 10vw;
-  margin-right: 10vw; */
 }
