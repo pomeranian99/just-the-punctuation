@@ -1,4 +1,4 @@
-document.getElementById("textTheyTyped").value = "Paste in some text here, then hit 'submit' to strip out everything but the punctuation!";
+document.getElementById("textTheyTyped").value = "Paste in some text here, then hit 'submit' to strip out everything but the punctuation! \n\nRefresh the site to do another.";
 
 var uniToAscii = [
   [8201, 45], // hyphen
