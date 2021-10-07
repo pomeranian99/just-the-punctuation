@@ -46,8 +46,6 @@ document.getElementById("submit").onclick = e => {
   for (let c = 0; c < final.length; c++) {
     charArray.push(final.charCodeAt(c));
   }
-  console.log("The array I got is ... ");
-  console.log(charArray);
 
   var finalArray = [];
   for (let b = 0; b < charArray.length; b++) {
@@ -63,13 +61,10 @@ document.getElementById("submit").onclick = e => {
       }
     }
   }
-  console.log("The array I'm left with is ... ");
-  console.log(finalArray);
   // change the text in the box
   var resultHTML = "";
   for (let i = 0; i < finalArray.length; i++) {
     resultHTML+= "&#" + finalArray[i] + ";" + " ";
   }
-  document.getElementById('container').innerHTML = "<div id='final'>"  + resultHTML + "</div>";
-  // document.getElementById("textTheyTyped").value = "Working on it!";
+  document.getElementById('container').innerHTML = "<div class='row'><div class='col-sm-3'></div><div class='col-sm-6'><div id='final'>"  + resultHTML + "</div><div class='col-sm-3'></div></div></div>";
 };
