@@ -15,18 +15,27 @@ document.getElementById("submit").onclick = e => {
   for (let c = 0; c < final.length; c++) {
     charArray.push(final.charCodeAt(c));
   }
+  console.log("The array I got is ... ")
+  console.log(charArray);
+  var result = "";
+  
   // NOW, what I need to do is ...
   // 1) iterate through the array, and ...
   // 2) if the number is less than 128 ...
   // 3) push into the array the html for that number (i.e. "&#34;"). But ..
   // 4) ... if it's larger than 127 (and thus is UNICODE) ... 
-  // 5) .. translate it to
+  // 5) .. translate it to ASCII 
   // 3) push into a new array
-  console.log("The array I got is ... ")
-  console.log(charArray);
-  var result = "";
-  
-  
+  var finalArray = [];
+  for (let b = 0; b < charArray.length; b++) {
+    if (charArray[b] < 128) {
+      finalArray.push(charArray[b]);
+    }
+    if (charArray[b] > 127) {
+      finalArray.push(uniToHTML(charArray[b]));
+    }
+  }
+  // change the text in the box 
   document.getElementById("textTheyTyped").value = "Working on it!";
   
 };
@@ -43,32 +52,6 @@ function uniToHTML (y) {
     case 8217: // single quotes
       x = "&#39;"
       break;
-    case 37: // percent 
-      x = "&#37;";
-      break;
-    case 45:
-      x = "&#8208;"
-      break;
-    case 44:
-      x = "&#44;";
-      break;
-    case 46:
-      x = "&#46;";
-      break;
-    case 47:
-      x = "&#8212;";
-      break;
-    case 36:
-      x = "&#36;";
-      break;
-    case 59:
-      x = "&#59;";
-      break;
-    case 39:
-      x = "&#8217;";
-      break;
-      
-      
       
   }
 }
