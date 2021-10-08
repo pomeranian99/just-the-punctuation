@@ -41,7 +41,7 @@ document.getElementById("submit").onclick = e => {
   // for some reason I seem to need to run this substitution again, I have no idea why lol
   var k = /[\r\n]|[0-9]/g;
   var final = almostFinal.replace(k, "");
-  // the "final" string winds up having some mystery line-breaks thrown in. Can't figure out how to get 'em out! So, here's my super-hacky way to get rid of them: go character by character ...
+  // the "final" string winds up having some mystery line-breaks thrown in. Can't figure out how to get 'em out! So, here's my super-hacky way to get rid of them: go character by character ... I could probably just get rid of the regex entirely and simplify this whole script by *only* going character by character, but I'm lazy and it works so what the heck, ain't gonna change it 
   var charArray = [];
   for (let c = 0; c < final.length; c++) {
     charArray.push(final.charCodeAt(c));
@@ -54,7 +54,7 @@ document.getElementById("submit").onclick = e => {
       finalArray.push(charArray[b]);
     }
     // otherwise, check and see if it's one of the special characters I
-    // specced out in my array
+    // specced out in the array
     for (let c = 0; c < uniToAscii.length; c++) {
       if (charArray[b] === uniToAscii[c][0]) {
         finalArray.push(uniToAscii[c][1]);  
