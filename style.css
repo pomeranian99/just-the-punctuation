@@ -42,4 +42,10 @@ body {
 
 #header h1 {
   position: relative;
+  left: 13px;
+}
+
+img {
+  max-width: 80%;
+  height: auto;
 }
