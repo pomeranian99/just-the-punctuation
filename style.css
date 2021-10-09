@@ -35,3 +35,11 @@ body {
 #footer {
   margin-top: 20px;
 }
+
+#header img {
+  float: left;
+}
+
+#header h1 {
+  position: relative;
+}
