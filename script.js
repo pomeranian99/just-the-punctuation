@@ -30,7 +30,8 @@ var uniToAscii = [
   [8275, 126], // wavy sign
   [8277, 42], // asterisk
   [8353, 128], // euro
-  [8364, 128] // euro
+  [8364, 128], // euro
+  [8528, ]
 ];
 
 document.getElementById("submit").onclick = e => {
