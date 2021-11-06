@@ -31,8 +31,8 @@ var uniToAscii = [
   [8277, 42], // asterisk
   [8353, 128], // euro
   [8364, 128], // euro
-  [8528, 8523], // interrobang
-  [8523, 8523] // interrobang
+  [8258, 8523], // interrobang
+  [8253, 8523] // interrobang
 ];
 
 document.getElementById("submit").onclick = e => {
@@ -48,6 +48,7 @@ document.getElementById("submit").onclick = e => {
   for (let c = 0; c < final.length; c++) {
     charArray.push(final.charCodeAt(c));
   }
+  console.log(charArray);
 
   var finalArray = [];
   for (let b = 0; b < charArray.length; b++) {
