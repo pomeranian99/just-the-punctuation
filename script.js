@@ -31,8 +31,8 @@ var uniToAscii = [
   [8277, 42], // asterisk
   [8353, 128], // euro
   [8364, 128], // euro
-  [8258, 8523], // interrobang
-  [8253, 8523] // interrobang
+  [8258, 8253], // interrobang
+  [8253, 8253] // interrobang
 ];
 
 document.getElementById("submit").onclick = e => {
